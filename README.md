@@ -1,3 +1,4 @@
+---
 
 # Inventory Management
 
@@ -55,12 +56,14 @@ The `server` directory contains the backend application. Here’s what’s insid
 - **package.json**: List of dependencies and scripts.
 - **tsconfig.json**: TypeScript configuration.
 
-The `server/src/index.ts` file includes routes for:
+The `server/src/index.ts` file includes the following routes:
 
 - **Dashboard**: `./routes/dashboardRoutes`
 - **Product**: `./routes/productRoutes`
 - **User**: `./routes/userRoutes`
 - **Expense**: `./routes/expenseRoutes`
+
+Make sure to configure these routes in the API Gateway to ensure that requests are properly routed to your backend application.
 
 ## Deployment Instructions
 
@@ -93,6 +96,11 @@ The `server/src/index.ts` file includes routes for:
    - Go to the API Gateway in the AWS Management Console.
    - Create a new API.
    - Define your API routes and methods (GET, POST, etc.) and link them to your EC2 backend endpoints.
+     - Ensure that routes correspond to the endpoints defined in `server/src/index.ts`:
+       - **Dashboard**: `/api/dashboard`
+       - **Product**: `/api/product`
+       - **User**: `/api/user`
+       - **Expense**: `/api/expense`
    - Deploy the API and note the endpoint URL to be used in your frontend application.
 
 ### 2. Deploy Backend on EC2
@@ -154,5 +162,11 @@ The `server/src/index.ts` file includes routes for:
 ## Acknowledgments
 
 Special thanks to [ED Roh](https://www.youtube.com/@EdRohDev) for creating and developing this full-stack project. This repository is a direct fork of his original work.
+
+---
+
+🎉🚀 **Thank you for checking out the Inventory Management project!** 🚀🎉
+
+Feel free to clone, deploy, and customize it to fit your needs. Happy coding!
 
 ---
