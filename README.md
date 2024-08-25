@@ -1,6 +1,6 @@
 ---
 
-# Fullstack Inventory ManagementInventory Management Web Application Deployment
+# Fullstack Inventory Management Application Deployment
 
 ## Overview
 
