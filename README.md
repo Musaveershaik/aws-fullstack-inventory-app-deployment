@@ -1,8 +1,11 @@
+
 # Inventory Management
 
 ## Overview
 
-This project is a full-stack inventory management application. It includes both a frontend and a backend component. The frontend is built with Next.js and is hosted on AWS Amplify. The backend is a Node.js application hosted on an EC2 instance, with a PostgreSQL database managed via AWS RDS. Images are stored in AWS S3, and the entire application operates within a secure Virtual Private Cloud (VPC) setup.
+Welcome to the Inventory Management project, a full-stack application designed for efficient inventory tracking and management. This project includes both a frontend and backend component and utilizes various AWS services for deployment and management.
+
+This repository contains the full-stack application created and developed by the YouTuber [ED Roh](https://www.youtube.com/@EdRohDev). I have forked this repository to share it with others who may find it useful.
 
 ## AWS Services Used
 
@@ -13,6 +16,7 @@ This project is a full-stack inventory management application. It includes both 
 - **VPC**: Provides a secure environment for running the applications.
 - **Public Subnet**: Allows internet access.
 - **Private Subnet**: Does not allow internet access.
+- **API Gateway**: Manages and routes API requests to the backend application.
 
 ## Project Structure
 
@@ -23,7 +27,7 @@ The repository is divided into two main directories:
 
 ### Client
 
-The client directory contains a Next.js project. Here's a brief overview of its files and folders:
+The `client` directory contains a Next.js project. Here's a brief overview of its files and folders:
 
 - **public**: Publicly accessible assets.
 - **src**: Source code for the application.
@@ -39,7 +43,7 @@ The client directory contains a Next.js project. Here's a brief overview of its 
 
 ### Server
 
-The server directory contains the backend application. Here’s what’s inside:
+The `server` directory contains the backend application. Here’s what’s inside:
 
 - **assets**: Backend assets.
 - **prisma**: Database schema and migration files.
@@ -50,6 +54,13 @@ The server directory contains the backend application. Here’s what’s inside:
 - **package-lock.json**: Dependency lock file.
 - **package.json**: List of dependencies and scripts.
 - **tsconfig.json**: TypeScript configuration.
+
+The `server/src/index.ts` file includes routes for:
+
+- **Dashboard**: `./routes/dashboardRoutes`
+- **Product**: `./routes/productRoutes`
+- **User**: `./routes/userRoutes`
+- **Expense**: `./routes/expenseRoutes`
 
 ## Deployment Instructions
 
@@ -77,6 +88,12 @@ The server directory contains the backend application. Here’s what’s inside:
 5. **Set Up VPC**:
    - Create a VPC with both public and private subnets.
    - Ensure the EC2 instance is placed in the private subnet while the RDS instance can be accessed through it.
+
+6. **Set Up API Gateway**:
+   - Go to the API Gateway in the AWS Management Console.
+   - Create a new API.
+   - Define your API routes and methods (GET, POST, etc.) and link them to your EC2 backend endpoints.
+   - Deploy the API and note the endpoint URL to be used in your frontend application.
 
 ### 2. Deploy Backend on EC2
 
@@ -108,7 +125,7 @@ The server directory contains the backend application. Here’s what’s inside:
 
 ### 3. Connect Frontend and Backend
 
-- Update the frontend application (`client`) with the backend API URL.
+- Update the frontend application (`client`) with the API Gateway endpoint URL.
 - Deploy changes to Amplify.
 
 ## Common Issues and Troubleshooting
@@ -122,10 +139,20 @@ The server directory contains the backend application. Here’s what’s inside:
 - **Frontend Deployment Issues**:
   - Check Amplify build logs for errors.
 
+- **API Gateway Issues**:
+  - Ensure that API Gateway is properly configured and linked to the EC2 backend.
+
 ## Additional Resources
 
 - [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/index.html)
 - [AWS RDS Documentation](https://docs.aws.amazon.com/rds/index.html)
 - [AWS Amplify Documentation](https://docs.amplify.aws/)
 - [AWS S3 Documentation](https://docs.aws.amazon.com/s3/index.html)
+- [AWS API Gateway Documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html)
 - [Next.js Documentation](https://nextjs.org/docs)
+
+## Acknowledgments
+
+Special thanks to [ED Roh](https://www.youtube.com/@EdRohDev) for creating and developing this full-stack project. This repository is a direct fork of his original work.
+
+---
