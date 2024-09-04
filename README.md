@@ -8,7 +8,8 @@ Welcome to the Inventory Management project, a full-stack application designed f
 
 This repository contains the full-stack application created and developed by the YouTuber [ED Roh](https://www.youtube.com/@EdRohDev). I have forked this repository to share it with others who may find it useful.
 
-![image](https://github.com/user-attachments/assets/1d46456a-9610-4536-aa24-dd751adc6182)
+![image](https://github.com/user-attachments/assets/1b294099-95c0-4e98-b672-ca2a410f01a9)
+
 
 
 
